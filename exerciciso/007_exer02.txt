@@ -1,0 +1,20 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        
+       double altura;
+       
+       Console.Write("Digite sua altura: ");
+       altura = double.Parse(Console.ReadLine());
+       
+       Console.WriteLine("A altura informada foi: "+altura+" metros");
+        
+       
+    }
+}

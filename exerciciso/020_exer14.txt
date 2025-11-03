@@ -1,0 +1,19 @@
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Mostrando 30 vezes !!!");
+        // inicializacao
+        // condicao deparada
+        // incremento
+        for(int i=1;i<31;i++){
+            Console.WriteLine(i+": A consusao acontece quando se aprende com as diferencas e nao com as igualdades");
+        }
+    }
+}

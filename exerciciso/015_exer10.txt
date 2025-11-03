@@ -1,0 +1,23 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Operadores aritimeticos");
+        int a=3, b=5;
+        int subtracao, multiplicacao, soma, modulo;
+        double divisao;
+        
+        subtracao = a - b;
+        soma = a + b;
+        multiplicacao = a * b;
+        modulo = a % b;
+        divisao = a / b;
+        
+        Console.WriteLine(a+" - "+b+" = "+subtracao);
+    }
+}

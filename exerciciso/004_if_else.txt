@@ -1,0 +1,20 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        
+        int a = 3, b = 5;
+        string msg = "A e maior";
+        
+        if(b>a){
+            msg = "B e maior";
+        }
+        
+        Console.WriteLine(msg);
+    }
+}

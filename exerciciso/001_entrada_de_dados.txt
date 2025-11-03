@@ -1,0 +1,17 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Hello word - c#");
+        int numeroInteiro = 10;
+        Console.WriteLine("Eu sou o camisa: "+numeroInteiro);
+        
+        bool sair = true;
+        Console.WriteLine("Voce vai sair? "+sair);
+    }
+}

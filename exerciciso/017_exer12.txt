@@ -1,0 +1,36 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {   
+        double n1, n2, md;
+        
+        Console.Write("Digite a primeiro nota: ");
+        n1 = double.Parse(Console.ReadLine());
+        
+        Console.Write("Digite a segunda nota: ");
+        n2 = double.Parse(Console.ReadLine());
+        
+        md = (n1 + n2 ) / 2;
+        
+        string msg= "";
+        
+        if(md>=7){
+            msg = "Aprovado";
+        }else{
+            msg = "Reprovado";
+        }
+        
+        Console.WriteLine("Media do aluno: "+md);
+        Console.WriteLine("Situacao: "+msg);
+        
+       
+        
+        
+        
+    }
+}

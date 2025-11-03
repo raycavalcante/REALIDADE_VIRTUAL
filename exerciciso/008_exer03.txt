@@ -1,0 +1,25 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        
+       int idade=0;
+       string nome="";
+       
+       Console.Write("Digite seu nome: ");
+       nome = Console.ReadLine();
+       
+       Console.Write("Digite sua idade: ");
+       idade = int.Parse(Console.ReadLine());
+       
+       Console.WriteLine("Ola, meu nome e "+nome+" e tenho "+idade+" anos");
+      
+       
+       
+    }
+}

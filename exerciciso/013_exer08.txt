@@ -1,0 +1,22 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        double n1, saida;
+        
+        Console.Write("Digite um numero: ");
+        n1 = double.Parse(Console.ReadLine());
+        
+        
+        saida = n1 * n1;
+        
+        Console.WriteLine("Valor ao quadrado: "+saida);
+        
+        
+    }
+}

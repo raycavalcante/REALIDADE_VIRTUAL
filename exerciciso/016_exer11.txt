@@ -1,0 +1,35 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {   
+        double a, b;
+        double soma, sub, div, mod, multi;
+        
+        Console.Write ("Digite o primeiro numero: ");
+        a = double.Parse(Console.ReadLine());
+        
+        Console.Write("Digite o segundo numero: ");
+        b = double.Parse(Console.ReadLine());
+        
+        soma = a + b;
+        sub = a - b;
+        div = a / b;
+        mod = a % b;
+        multi = a * b;
+        
+        Console.WriteLine("------- Saidas das operacoes ------- ");
+        Console.WriteLine("Soma: "+soma);
+        Console.WriteLine("Subtracao: "+sub);
+        Console.WriteLine("divisao: "+div);
+        Console.WriteLine("Resto da divisao: "+mod);
+        Console.WriteLine("Multiplicacao: "+multi);
+        
+        
+        
+    }
+}
