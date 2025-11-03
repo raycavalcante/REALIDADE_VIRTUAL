@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ambiente A-Frame com Popups</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <style>
+        .popup {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #00ff00;
+            max-width: 300px;
+            display: none;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        
+        .popup-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <a-scene cursor="rayOrigin: mouse">
+     <!-- Cena 360° -->
+        <a-sky src="mountain_view_1.jpg" rotation="0 -90 0"></a-sky>
+    
+        <!-- Câmera com cursor -->
+        <a-camera>
+            <a-cursor 
+                id="cursor"
+                raycaster="objects: .clickable"
+                animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
+                animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing; dur: 1500"
+                event-set__mouseenter="_event: mouseenter; color: #00FF00"
+                event-set__mouseleave="_event: mouseleave; color: #FFFFFF">
+            </a-cursor>
+        </a-camera>
+
+        <!-- Céu 
+        <a-sky color="#222266"></a-sky> -->
+
+        <!-- Chão -->
+        <a-plane 
+            position="0 0 0" 
+            rotation="-90 0 0" 
+            width="20" 
+            height="20" 
+            color="#336633"
+            shadow>
+        </a-plane>
+
+        <!-- Objeto 1: Cubo -->
+        <a-image
+            class="clickable"
+            position="-4 1 4" 
+            width="2" 
+            height="1.2" 
+            depth="1" 
+            src="jacunda.jpg"
+            shadow
+            data-title="BRS Jacundá (MACACHEIRA)"
+            data-description="A BRS Jacundá é uma nova variedade de mandioca (macaxeira) desenvolvida pela Embrapa Amazônia Ocidental, que se destaca pela sua alta produtividade e adaptação às condições do Amazonas."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+
+        <!-- Objeto 2: Imagem do cará-roxo -->
+        <a-image 
+            class="clickable"
+            position="4 1 4" 
+            radius="0.7" 
+            src="cará.png"
+            shadow
+            data-title="Cará-roxo"
+            data-description="O cará-roxo (Dioscorea trifida ou Dioscorea alata) é um tubérculo nutritivo de origem amazônica, muito apreciado na culinária local e conhecido por seus diversos benefícios à saúde."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+
+        <!-- Objeto 3: Cilindro -->
+        <a-image 
+            class="clickable"
+            position="4 1 1" 
+            radius="0.5" 
+            width="2"
+            height="1.3" 
+            src="abelha.jpg"
+            shadow
+            data-title="ABELHAS SEM FERRÃO"
+            data-description="Em Tefé e na Amazônia, as abelhas sem ferrão (meliponíneos) são conhecidas por nomes locais como uruçus (preta e amarela), tiúbas, juparas, manduris, rajadas, canudos e jandaíras. A região abriga uma grande diversidade de espécies, incluindo gêneros como Melipona e outros, como Plebeia."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+
+        <!-- Objeto 4: Cone -->
+        <a-image
+            class="clickable"
+            position="-4 1 -2" 
+            radius-bottom="0.6" 
+            width="2"
+            height="2" 
+            src="caju.jpg"
+            shadow
+            data-title="CAJU"
+            data-description="O caju é um alimento rico em vitamina C; ele tem aproximadamente 5 vezes mais vitamina C do que a laranja, por exemplo. Por esse motivo, é um ótimo reforço para o nosso sistema imunológico. Quanto mais maduro, maior quantidade de vitamina C ele possui. Também é fonte de sais minerais, como o zinco e ferro."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+
+        <!-- Objeto 5: Torus -->
+        <a-image 
+            class="clickable"
+            position="4 1 -6" 
+            arc="360" 
+            radius="0.8" 
+            radius-tubular="0.1" 
+            src="cupu.jpg"
+            shadow
+            data-title="CUPUAÇU"
+            data-description="Pupu, cacao branco, copoasú ou cupuaçu, não importa o nome, esta fruta amazônica tem uma polpa cremosa que é uma delícia. Cientificamente conhecido como Theobroma Grandiflorum, possui casca marron e dura, e varia de 15 a 25 cm."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+        <!-- Objeto 6: Torus -->
+        <a-image
+            class="clickable"
+            position="-4 1 -6" 
+            arc="360" 
+            radius="0.8" 
+            radius-tubular="0.1" 
+            src="manga.png"
+            shadow
+            data-title="MANGA"
+            data-description="A manga (Mangifera indica, da família Anacardiaceae) é uma fruta tropical muito apreciada pelo seu sabor, fragrância e valor nutricional e medicinal, despertando atualmente, de forma crescente, o interesse das pesquisas."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+        <!-- Objeto 7: Torus -->
+        <a-image
+            class="clickable"
+            position="4 1 -2" 
+            arc="360" 
+            radius="0.8" 
+            radius-tubular="0.1" 
+            src="bacaba.png"
+            shadow
+            data-title="ABACABA"
+            data-description="Bacaba é o nome de uma palmeira amazônica cujo fruto lembra o açaí. Também pode ser triturado e fornece uma polpa nutritiva, consumida principalmente no estado do Amazonas. É uma fonte de alimento importante para pássaros e mamíferos."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+        <!-- Objeto 8: Torus -->
+        <a-image
+            class="clickable"
+            position="-4 1 1" 
+            arc="360" 
+            radius="0.8" 
+            radius-tubular="0.1" 
+            src="mamao.png"
+            shadow
+            data-title="MAMÃO"
+            data-description="Sua casca é lisa e fina, verde na ocasião da colheita e que torna-se gradativamente amarela ou alaranjada com o amadurecimento. A cavidade interna do fruto contém numerosas sementes pretas, comestíveis, de sabor picante, revestidas por uma substância mucilaginosa."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+        <!-- Objeto 9: Torus -->
+        <a-image 
+            class="clickable"
+            position="4 1 8" 
+            arc="360" 
+            radius="0.8" 
+            radius-tubular="0.1" 
+            src="cuia.jpg"
+            shadow
+            data-title="CUIA"
+            data-description="A cuia – também chamada de cabaça, coité, cuietê ou cuité – é o fruto da Cuieira, um tipo de árvore muito comum nas regiões Norte e Nordeste do Brasil. Seu fruto maduro, depois de esvaziado o miolo, é usado para fazer a cuia, que pode também ser lavrada e ornada em ouro, prata e outros metais, posteriormente."
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+        <!-- Objeto 10: Torus -->
+        <a-image
+            class="clickable"
+            position="-4 1 8" 
+            arc="360" 
+            radius="0.8" 
+            radius-tubular="0.1" 
+            src="mandioca_mansa.png"
+            shadow
+            data-title="Mandioca-mansa (ou aipim)"
+            data-description="A mandioca-mansa (ou aipim, também conhecida como macaxeira em algumas regiões) é um tubérculo nativo da América do Sul e um dos alimentos energéticos mais importantes do Brasil.
+            "
+            event-set__mouseenter="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__mouseleave="_event: mouseleave; scale: 1 1 1">
+        </a-image>
+
+        <!-- Iluminação -->
+        <a-entity light="type: ambient; color: #888"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.5" position="-5 5 2"></a-entity>
+
+        <!-- Popup Container -->
+        <div id="popup" class="popup"></div>
+    </a-scene>
+
+    <script>
+        // Elementos do DOM
+        const popup = document.getElementById('popup');
+        const cursor = document.getElementById('cursor');
+
+        // Eventos para mostrar/ocultar popup
+        document.querySelectorAll('.clickable').forEach(object => {
+            // Mouse enter - mostrar popup
+            object.addEventListener('mouseenter', function(evt) {
+                const title = this.getAttribute('data-title');
+                const description = this.getAttribute('data-description');
+                
+                // Posicionar popup próximo ao cursor
+                popup.style.left = (evt.detail.intersection.point.x * 100 + 50) + '%';
+                popup.style.top = (evt.detail.intersection.point.y * 100 + 50) + '%';
+                
+                // Conteúdo do popup
+                popup.innerHTML = `
+                    <div class="popup-title">${title}</div>
+                    <div class="popup-desc">${description}</div>
+                `;
+                
+                popup.style.display = 'block';
+            });
+
+            // Mouse leave - ocultar popup
+            object.addEventListener('mouseleave', function() {
+                popup.style.display = 'none';
+            });
+
+            // Mover popup com o cursor
+            object.addEventListener('mousemove', function(evt) {
+                const intersection = evt.detail.intersection;
+                if (intersection) {
+                    // Converter coordenadas 3D para coordenadas de tela
+                    const point = intersection.point;
+                    popup.style.left = (point.x * 50 + 50) + '%';
+                    popup.style.top = (-point.y * 50 + 50) + '%';
+                }
+            });
+        });
+
+        // Sistema para atualizar posição do popup baseado no movimento do mouse
+        document.addEventListener('mousemove', function(evt) {
+            if (popup.style.display === 'block') {
+                // Posicionar popup próximo ao cursor do mouse
+                popup.style.left = (evt.clientX + 15) + 'px';
+                popup.style.top = (evt.clientY + 15) + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
