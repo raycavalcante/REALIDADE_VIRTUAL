@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esfera com Textura em A-Frame</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+
+    <a-scene>
+            <a-sky src="space.jpg" rotation="0 -90 0"></a-sky>
+
+        <a-assets>
+            <img id="texture-terra" src="terra_textura.jpg">
+            <img id="texture-marte" src="marte_textura.jpg">
+            <img id="texture-mercurio" src="mercurio_textura.jpg">
+            <img id="texture-venus" src="venus_textura.jpg">
+            <img id="texture-jupiter" src="jupiter_textura.jpg">
+            <img id="texture-sartuno" src="saturno_textura.jpg">
+            <img id="texture-urano" src="urano_textura.jpg">
+            <img id="texture-neturno" src="netuno_textura.jpg">
+            
+            </a-assets>
+
+        <a-sphere terra
+            position="5 10 108" 
+            radius="4.05" 
+            material="src: #texture-terra; repeat: 1 1"
+            rotation="0 0 0"
+            animation="
+                property: rotation; 
+                to: 0 360 0; 
+                loop: true; 
+                dur: 10000;
+                easing: linear"
+        ></a-sphere>
+
+        <a-sphere marte
+            position="-120 5 -20" 
+            radius="7.25" 
+            material="src: #texture-marte; repeat: 1 1"
+            rotation="0 0 0"
+            animation="
+                property: rotation; 
+                to: 0 360 0; 
+                loop: true; 
+                dur: 10000;
+                easing: linear"
+        ></a-sphere>
+
+        <a-sphere venus
+            position="-200 5 -30" 
+            radius="7.25" 
+            material="src: #texture-venus; repeat: 1 1"
+            rotation="0 0 0"
+            animation="
+                property: rotation; 
+                to: 0 360 0; 
+                loop: true; 
+                dur: 10000;
+                easing: linear"
+        ></a-sphere>
+
+        <a-sphere jupiter
+            position="-300 20 -30" 
+            radius="8.25" 
+            material="src: #texture-jupiter; repeat: 1 1"
+            rotation="0 0 0"
+            animation="
+                property: rotation; 
+                to: 0 360 0; 
+                loop: true; 
+                dur: 10000;
+                easing: linear"
+        ></a-sphere>
+
+        <a-sphere saturno
+            position="-18 40 -23" 
+            radius="10.25" 
+            material="src: #texture-sartuno; repeat: 1 1"
+            rotation="0 0 0"
+            animation="
+                property: rotation; 
+                to: 0 360 0; 
+                loop: true; 
+                dur: 10000;
+                easing: linear"
+        ></a-sphere>
+
+        <a-sphere urano
+            position="12 5 -5" 
+            radius="10.25" 
+            material="src: #texture-urano; repeat: 1 1"
+            rotation="0 0 0"
+            animation="
+                property: rotation; 
+                to: 0 360 0; 
+                loop: true; 
+                dur: 10000;
+                easing: linear"
+        ></a-sphere>
+        
+        <a-sphere netuno
+            position="-10 50 -17" 
+            radius="10.25" 
+            material="src: #texture-neturno; repeat: 1 1"
+            rotation="0 0 0"
+            animation="
+                property: rotation; 
+                to: 0 360 0; 
+                loop: true; 
+                dur: 10000;
+                easing: linear"
+        ></a-sphere>
+
+        <a-sphere mercurio
+        position="1 25 -5" 
+        radius="7.25" 
+        material="src: #texture-mercurio; repeat: 1 1"
+        rotation="0 0 0"
+        animation="
+            property: rotation; 
+            to: 0 360 0; 
+            loop: true; 
+            dur: 10000;
+            easing: linear"
+    ></a-sphere>
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+
+        <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+        
+    </a-scene>
+
+</body>
+</html>
